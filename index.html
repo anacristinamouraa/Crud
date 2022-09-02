@@ -18,22 +18,15 @@
 
 <body>
     <header>
-        <h1 class="header-title">Cadastro de Produtos</h1>
+        <h1 class="header-title">Cadastro de Livros</h1>
     </header>
     <main>
-        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastro de Produtos</button>
+        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastro de Livros</button>
         <button type="button" class="button blue mobile" id="cadastrarCliente">Login</button>
         
         <table id="tableClient" class="records">
             <thead>
-                <tr>
-                    
-                    <th>Produto</th>
-                    <th>Valor</th>
-                    <th>Quantidade</th>
-                    <th>Fornecedor</th>
-                   
-                </tr>
+                
             </thead>
             <tbody>
 
@@ -42,15 +35,15 @@
         <div class="modal" id="modal">
             <div class="modal-content">
                 <header class="modal-header">
-                    <h2>Produto</h2>
+                    <h2>Livros</h2>
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
                 <form id="form" class="modal-form">
-                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Produto"
+                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Título"
                         required>
-                    <input type="text" id="valor" class="modal-field" placeholder="Valor" required>
-                    <input type="text" id="quantidade" class="modal-field" placeholder="Quantidade" required>
-                    <input type="text" id="fornecedor" class="modal-field" placeholder="Fornecedor" required>
+                    <input type="text" id="valor" class="modal-field" placeholder="Categoria" required>
+                    <input type="text" id="quantidade" class="modal-field" placeholder="Autor" required>
+                    <input type="text" id="fornecedor" class="modal-field" placeholder="Sinopse" required>
                 </form>
                 <footer class="modal-footer">
                     <button id="salvar" class="button green">Salvar</button>

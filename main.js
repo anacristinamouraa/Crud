@@ -49,12 +49,12 @@ const saveClient = () => {
     debugger
     if (isValidFields()) {
             const client = {
-            produto: document.getElementById('nome').value,
-            valor: document.getElementById('valor').value,
-            quantidade: document.getElementById('quantidade').value,
-            fornecedor: document.getElementById('fornecedor').value
+            produto: document.getElementById('titulo').value,
+            valor: document.getElementById('categoria').value,
+            quantidade: document.getElementById('autor').value,
+            fornecedor: document.getElementById('sinopse').value
         }
-        const index = document.getElementById('nome').dataset.index
+        const index = document.getElementById('titulo').dataset.index
     if (index == 'new') {
             createClient(client)
             updateTable()
@@ -70,10 +70,10 @@ const saveClient = () => {
 const createRow = (client, index) => {
     const newRow = document.createElement('tr')
     newRow.innerHTML = `
-        <td>${client.produto}</td>
-        <td>${client.valor}</td>
-        <td>${client.quantidade}</td>
-        <td>${client.fornecedor}</td>
+        <td>${client.titulo}</td>
+        <td>${client.categoria}</td>
+        <td>${client.autor}</td>
+        <td>${client.sinopse}</td>
         <td>
             <button type="button" class="button green" id="edit-${index}">Editar</button>
             <button type="button" class="button red" id="delete-${index}" >Excluir</button>
@@ -94,10 +94,10 @@ const updateTable = () => {
 }
 
 const fillFields = (client) => {
-    document.getElementById('nome').value = client.produto
-    document.getElementById('email').value = client.valor
-    document.getElementById('celular').value = client.quantidade
-    document.getElementById('cidade').value = client.fornecedor
+    document.getElementById('nome').value = client.titulo
+    document.getElementById('email').value = client.categoria
+    document.getElementById('celular').value = client.autor
+    document.getElementById('cidade').value = client.sinopse
     document.getElementById('nome').dataset.index = client.index
 }
 
@@ -117,7 +117,7 @@ const editDelete = (event) => {
             editClient(index)
         } else {
             const client = readClient()[index]
-            const response = confirm(`Deseja realmente excluir o produto ${client.produto}`)
+            const response = confirm(`Deseja realmente excluir o livro ${client.livro}`)
             if (response) {
                 deleteClient(index)
                 updateTable()

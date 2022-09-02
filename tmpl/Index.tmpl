@@ -1,0 +1,31 @@
+{{ define "Index" }}
+    {{ template "Header" }}
+        {{ template "Menu" }}
+
+
+    <h2>Livros</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Título</td>
+                <td>Categoria</td>
+                <td>Autor</td>
+                <td>Sinopse</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range . }}
+            <tr>
+                <td>{{ .Id }}</td>
+                 <td>{{ .Título }}</td>
+                <td>{{ .Categoria }}</td>
+                <td>{{ .Autor }}</td>
+                <td>{{ .Sinopse }}</td>
+
+                <td><a href="/show?id={{ .Id }}">Visualizar</a>  |  <a href="/edit?id={{ .Id }}">Editar</a></td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+    {{ template "Footer" }}
+{{ end }}

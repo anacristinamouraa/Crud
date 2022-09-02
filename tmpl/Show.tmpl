@@ -1,0 +1,13 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu" }}
+
+
+    <h2> Livros {{ .Id }} </h2>
+      <p>Título: {{ .Titulo }}</p>
+      <p>Categoria: {{ .Categoria }}</p>
+      <p>Autor: {{ .Autor }}</p>
+      <p>Sinopse:  {{ .Sinopse }}</p>
+      <br /> <a href="/edit?id={{ .Id }}">Editar</a></p><a href="/delete?id={{ .Id }}">Deletar</a>
+  {{ template "Footer" }}
+{{ end }}
